@@ -3,6 +3,7 @@ body {
     z-index: 1;
     background-color: white;
     position: relative;
+    overflow-x: hidden;
 }
 
 .h1 {
@@ -64,10 +65,10 @@ body {
 }
 
 #headerText {
-    position: fixed;
+    position: absolute;
     top: 35vh;
-    
-    margin-left: 30vw;
+    left: 50%;
+    transform: translate(-50%,-50%);
     height: 30vh;
     z-index: 0;
     color: white;
