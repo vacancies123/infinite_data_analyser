@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="./css.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
   </head>
 <body>
   <section id="nav">
@@ -26,6 +27,7 @@
             <li class="nav-item"><a class="nav-link" href="contactanos.html">Contactanos con un mensaje </a></li>
             <li class="nav-item"><a class="nav-link" href="#section1">Saber más</a></li>
             <li class="#"><a class="nav-link" href="#section1">Big Data</a></li>
+			<li><button type="button" class="btn btn-danger" id="tema" onclick="cambiarTema()"><i class="fa fa-moon-o" aria-hidden="true"></i></button></li>
           </ul>
         </div>
       </div>
@@ -52,17 +54,17 @@
       <div id="features">
         <div class="row">
             <h1 class="h1">¿Qué nos diferencia?</h1>
-            <div class="col-4 featureCard">
+            <div id="cambio1" class="col-4 featureCard">
                 <i class="bi-window"></i>
                 <h3>Responsabilidad</h3>
                 <p>Alta responsabilidad en el manejo de los datos</p>
             </div>
-            <div class="col-4 featureCard">
+            <div id="cambio2" class="col-4 featureCard">
                 <i class="bi-layers"></i>
                 <h3>Compromiso</h3>
                 <p>Seguridad sobre el compromiso que ofrecemos</p>
             </div>
-            <div class="col-4 featureCard">
+            <div id="cambio3" class="col-4 featureCard">
                 <i class="bi-terminal"></i>
                 <h3>Disponibilidad</h3>
                 <p>A prueba de fallos y caídas</p>
@@ -114,16 +116,95 @@
         <p style="text-align: center; margin-top: 50px;">Pagina version 3</p>
       </div>
       <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-      <script>
+    	<script>
 
-        $(window).scroll(function(){
-          if($(window).scrollTop()){
-            $("section").addClass("black");
-          }
-          else {
-            $("section").removeClass("black");
-          }
-        })
-      </script>
+			$(window).scroll(function(){
+			if($(window).scrollTop()){
+				$("section").addClass("black");
+			}
+			else {
+				$("section").removeClass("black");
+			}
+			})
+			
+			var body= document.body;
+	
+			function cambiarTema(){
+				
+				if (body.style.background=="dimgray"){
+					body.style.background="white"
+					var element1 = document.getElementById("contact1");
+					var element2 = document.getElementById("features");
+					var element3 = document.getElementById("section2");
+					var element4 = document.getElementById("cta");
+					var element5 = document.getElementById("cambio1");
+					var element6 = document.getElementById("cambio2");
+					var element7 = document.getElementById("cambio3");
+
+					element1.classList.remove("bg-dark")
+					element1.classList.add("bg-light")
+					element1.classList.remove("text-light")
+					element1.classList.add("text-dark")
+
+					element2.classList.remove("bg-dark")
+					element2.classList.add("bg-light")
+					element2.classList.remove("text-light")
+					element2.classList.add("text-dark")
+
+					element3.classList.remove("bg-dark")
+					element3.classList.add("bg-light")
+					element3.classList.remove("text-light")
+					element3.classList.add("text-dark")
+
+					element4.classList.remove("bg-dark")
+					element4.classList.add("bg-light")
+					element4.classList.remove("text-light")
+					element4.classList.add("text-dark")
+
+
+
+				}else{
+					body.style.background="dimgray"
+					var element1 = document.getElementById("contact1");
+					var element2 = document.getElementById("features");
+					var element3 = document.getElementById("section2");
+					var element4 = document.getElementById("cta");
+					var element5 = document.getElementById("cambio1");
+					var element6 = document.getElementById("cambio2");
+					var element7 = document.getElementById("cambio3");
+
+					element1.classList.remove("bg-light")
+					element1.classList.add("bg-dark");
+					element1.classList.remove("text-dark")
+					element1.classList.add("text-light");
+
+					element2.classList.remove("bg-light")
+					element2.classList.add("bg-dark");
+					element2.classList.remove("text-dark")
+					element2.classList.add("text-light");
+
+					element3.classList.remove("bg-light")
+					element3.classList.add("bg-dark");
+					element3.classList.remove("text-dark")
+					element3.classList.add("text-light")
+
+					element4.classList.remove("bg-light")
+					element4.classList.add("bg-dark");
+					element4.classList.remove("text-dark")
+					element4.classList.add("text-light")
+
+					element5.classList.add("text-dark")
+
+					element6.classList.add("text-dark")
+
+					element7.classList.add("text-dark")
+
+
+				}
+			}
+		</script>
+		
+		
+	  
 </body>
 </html>
